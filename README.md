@@ -1,4 +1,4 @@
-ember-metrics-matomo-adapter
+ember-metrics-matomo-adapter [![Build Status](https://travis-ci.org/effective-ember/ember-metrics-matomo-adapter.svg?branch=master)](https://travis-ci.org/effective-ember/ember-metrics-matomo-adapter)
 ==============================================================================
 
 An addon that provides a metrics-adapter for [Matomo](https://matomo.org/) for [ember-metrics](https://github.com/adopted-ember-addons/ember-metrics).
