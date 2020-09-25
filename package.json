@@ -36,6 +36,7 @@
     "@ember/optional-features": "^2.0.0",
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.1",
+    "@release-it/conventional-changelog": "^2.0.0",
     "@types/ember": "^3.16.0",
     "@types/ember-qunit": "^3.4.11",
     "@types/ember-resolver": "^5.0.9",
@@ -72,6 +73,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "qunit-dom": "^1.4.0",
+    "release-it": "^14.0.3",
     "typescript": "^4.0.3"
   },
   "engines": {
@@ -82,5 +84,19 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    }
   }
 }
