@@ -56,6 +56,9 @@ module.exports = {
         'prettier/@typescript-eslint',
         'plugin:prettier/recommended',
       ],
+      rules: {
+        'prefer-rest-params': 'off',
+      },
     },
     // node files
     {
