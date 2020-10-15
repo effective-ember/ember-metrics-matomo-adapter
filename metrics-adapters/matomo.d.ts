@@ -9,6 +9,11 @@ declare type MatomoTrackEventOptions = {
   name?: string;
   value?: number;
 };
+declare type MatomoTrackSiteSearchOptions = {
+  keyword: string;
+  category?: string;
+  searchCount?: number;
+};
 declare type MatomoConfig = {
   scriptUrl: string;
   trackerUrl: string;
@@ -27,6 +32,11 @@ export default class MatomoAdapter extends Base<MatomoConfig> {
   init(): void;
   trackPage({ page, title }: MatomoTrackPageOptions): void;
   trackEvent({ category, action, name, value }: MatomoTrackEventOptions): void;
+  trackSiteSearch({
+    keyword,
+    category,
+    searchCount,
+  }: MatomoTrackSiteSearchOptions): void;
   willDestroy(): void;
 }
 export {};

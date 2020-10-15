@@ -129,5 +129,20 @@ module('Integration | Component | matomo', function (hooks) {
         ['trackEvent', 'category', 'action', 'name', 9001],
       ]);
     });
+
+    test('#trackSiteSearch - tracks internal website searches via matomo api', async function (assert) {
+      const metrics = this.owner.lookup('service:metrics');
+
+      metrics.invoke('trackSiteSearch', {
+        keyword: 'myKeyWord',
+        category: 'myCategory',
+        searchCount: 2,
+      });
+
+      assert.deepEqual(window._paq, [
+        ...DEFAULT_INIT_COMMANDS,
+        ['trackSiteSearch', 'myKeyWord', 'myCategory', 2],
+      ]);
+    });
   });
 });
