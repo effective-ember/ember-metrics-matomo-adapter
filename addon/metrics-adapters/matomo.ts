@@ -13,6 +13,12 @@ type MatomoTrackEventOptions = {
   value?: number;
 };
 
+type MatomoTrackSiteSearchOptions = {
+  keyword: string;
+  category?: string;
+  searchCount?: number;
+};
+
 type MatomoConfig = {
   scriptUrl: string;
   trackerUrl: string;
@@ -66,6 +72,18 @@ export default class MatomoAdapter extends Base<MatomoConfig> {
 
     if (_paq) {
       _paq.push(['trackEvent', category, action, name, value]);
+    }
+  }
+
+  trackSiteSearch({
+    keyword,
+    category,
+    searchCount,
+  }: MatomoTrackSiteSearchOptions): void {
+    const _paq = window._paq;
+
+    if (_paq) {
+      _paq.push(['trackSiteSearch', keyword, category, searchCount]);
     }
   }
 

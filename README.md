@@ -80,6 +80,21 @@ export default class ApplicationRoute extends Route {
 }
 ```
 
+### Matomo-specific methods
+
+Matomo implements some methods that aren't part of `ember-metrics` [main api](https://github.com/adopted-ember-addons/ember-metrics#api). These methods can be called through `ember-metrics` `invoke`.  
+Below is a list of Matomo-specific methods that are implemented by `ember-metrics-matomo-adapter`.
+
+- [`trackSiteSearch`](https://developer.matomo.org/guides/tracking-javascript-guide#internal-search-tracking)
+  ```js
+  this.metrics.invoke('trackSiteSearch', {
+    keyword: 'myKeyWord',
+    category: 'myCategory',
+    searchCount: 2,
+  });
+
+  ```
+
 Contributing
 ------------------------------------------------------------------------------
 
